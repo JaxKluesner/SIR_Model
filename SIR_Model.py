@@ -16,3 +16,17 @@ threshold = inf_rate * susc / rec_rate
 s_prime = lambda susc: susc * inf_rate
 i_prime = lambda susc, inf: susc * inf_rate - inf * rec_rate
 r_prime = lambda inf: inf * rec_rate
+
+#Timescale
+T = 100
+t = np.linspace(0,T,1000)
+
+
+y0 = [susc, inf, rec]
+#print(y0)
+
+f = lambda y,t: [inf_rate * y[0] * y[1],
+                 inf_rate * y[0] * y[1] - rec_rate * y[1],
+                 rec_rate * y[1]]
+
+y_sol = odeint(f, y0, t)
