@@ -1,3 +1,6 @@
+# This is a program for basic SIR Model.
+# Thanks to professor Hans-Werner Van Wyck for an introduction to the subject matter and a basic version of code.
+
 import numpy as np
 import matplotlib as mplib
 import matplotlib.pyplot as plt
@@ -19,18 +22,19 @@ r_prime = lambda inf: inf * rec_rate
 
 #Timescale
 T = 100
-t = np.linspace(0, T, 100)
+t = np.linspace(0, T, 1000)
 
 
 y0 = [susc, inf, rec]
 
 # The function of population over time f[susc, inf, rec].
-# First term is susceptible and so on separated by commas
+# First term is susceptible and so on separated by commas.
 f = lambda y,t: [inf_rate * y[0] * y[1],
                  inf_rate * y[0] * y[1] - rec_rate * y[1],
                  rec_rate * y[1]]
 
-# Throws excess work warning? Calculates the solution to f over time
+# Throws excess work warning (Apparently for R0> 1).
+# Calculates the solution to f over time.
 y_sol = odeint(f, y0, t)
 
 # Beginning of graphing.

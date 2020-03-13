@@ -1,3 +1,8 @@
 This will be a modeling project for modeling a SIR model in a general sense. So the goal is to make a program that can
 take inputs to make projections about any disease you put into it as long as you have certain data. This page will be
 updates in time to reflect what has been done. 3-11-20
+
+Finished with the basic input commands and calculating the rates of change (though they are currently unused) 3-12-20
+
+Added the basic differential equation that fuels the mathematics and added graphing capabilities. Any threshold > 1 will
+cause the programs graph to go horribly awry, a problem for tomorrow. 3-13-20 1:02 AM
